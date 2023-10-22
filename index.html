@@ -1,0 +1,180 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>证书查询</title>
+</head>
+<style>
+	.clearfix:after{
+		content:'';
+		display:block;
+		clear:both;
+		visibility:hidden;
+		line-height: 0;
+		height: 0;
+		font-size:0;
+	}
+	.clearfix{
+		*zoom:1;/*IE/7/6不支持伪类，此方法可以让ie支持*/
+	}
+	.cert-detail-box{
+		width: 350px;
+		box-sizing: border-box;
+		padding: 25px 2px;
+		margin: 0 auto;
+	}
+	.cert-detail-box h4{
+		margin: 0;
+		font-size: 14px;
+		line-height: 20px;
+		text-align: center;
+		font-weight: normal;
+		color: #493131;
+		margin-bottom: 15px;
+	}
+	.cert-detail-box h4 b{
+		font-weight: bold;
+		font-size: 14px;
+		line-height: 20px;
+		color: #000000;
+	}
+	.cert-detail-box .detail-slide{
+		width: 100%;
+		margin-bottom: 10px;
+		font-size: 0;
+	}
+	.detail-slide span{
+		display: block;
+		float: left;
+		width: 68px;
+		font-size: 14px;
+		line-height: 20px;
+		color: #0082CB;
+		font-weight: bold;
+	}
+	.detail-slide p{
+		display: block;
+		float: left;
+		margin: 0;
+		width: 277px;
+		font-size: 14px;
+		line-height: 20px;
+		text-align: justify;
+	}
+	.detail-slide p.red{
+		color: red;
+	}
+	.detail-slide.detail-special span{
+		width: 92px;
+	}
+	.detail-slide.detail-special p{
+		width: 254px;
+	}
+</style>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link type="text/css" href="https://static.yun.chinahrt.com/js/easyui/themes/default/easyui.css?1697723059714" rel="stylesheet"/>
+    <link type="text/css" href="https://static.yun.chinahrt.com/js/easyui/themes/icon.css?1697723059714" rel="stylesheet"/>	
+    <link type="text/css" href="https://static.yun.chinahrt.com/css/base.css?1697723059714" rel="stylesheet"/>
+    <link type="text/css" href="https://static.yun.chinahrt.com/css/footer.css?1697723059714" rel="stylesheet"/>
+    <link type="text/css" href="https://static.yun.chinahrt.com/css/addform.css?1697723059714" rel="stylesheet"/>
+    <link type="text/css" href="https://static.yun.chinahrt.com/css/addstyle.css?1697723059714" rel="stylesheet"/>
+    <link type="text/css" href="https://static.yun.chinahrt.com/css/system.css?1697723059714" rel="stylesheet"/>
+    <link type="text/css" href="https://static.yun.chinahrt.com/css/add.css?1697723059714" rel="stylesheet"/>
+    <link type="text/css" href="https://static.yun.chinahrt.com/css/tipsy.css?1697723059714" rel="stylesheet"/> 
+    <link type="text/css" href="https://static.yun.chinahrt.com/js/layer/skin/layer.css?1697723059714" rel="stylesheet"/> 
+    <link type="text/css" href="https://static.yun.chinahrt.com/js/ztree3.5/css/zTreeStyle/zTreeStyle.css?1697723059714" rel="stylesheet"/>
+    <link type="text/css" href="https://static.yun.chinahrt.com/css/jquery.autocomplete.css?1697723059714"  rel="stylesheet"/>  
+    
+    <script type="text/javascript" src="https://static.yun.chinahrt.com/js/easyui/jquery.min.js?1697723059714"></script>
+    <script type="text/javascript" src="https://static.yun.chinahrt.com/js/easyui/jquery.easyui.min.js?1697723059714"></script>
+    <script type="text/javascript" src="https://static.yun.chinahrt.com/js/extention.js?1697723059714"></script>
+    <script type="text/javascript" src="https://static.yun.chinahrt.com/js/sysExtJquery.js?1697723059714"></script>
+    <script type="text/javascript" src="https://static.yun.chinahrt.com/js/extEasyUI.js?1697723059714"></script>
+    <script type="text/javascript" src="https://static.yun.chinahrt.com/js/flexpaper/flexpaper_flash.js?1697723059714"></script>
+    <script type="text/javascript" src="https://static.yun.chinahrt.com/js/index.js?1697723059714"></script>
+    <script type="text/javascript" src="https://static.yun.chinahrt.com/js/orgctl.js?1697723059714"></script>
+    <script type="text/javascript" src= "https://static.yun.chinahrt.com/js/easyui/locale/easyui-lang-zh_CN.js?1697723059714" ></script>
+    <script type="text/javascript" src="https://static.yun.chinahrt.com/js/jquery.validate.js?1697723059714"></script>
+    <script type="text/javascript" src="https://static.yun.chinahrt.com/js/additional-methods.js?1697723059714"></script>
+    <script type="text/javascript" src="https://static.yun.chinahrt.com/js/jquery.metadata.js?1697723059714"></script>
+    <script type="text/javascript" src="https://static.yun.chinahrt.com/js/easyui-extend-rule.js?1697723059714"></script>
+    <script type="text/javascript" src="https://static.yun.chinahrt.com/js/common.js?1697723059714"></script>
+    <script type="text/javascript" src="https://static.yun.chinahrt.com/js/jquery.validate.wrapper.js?1697723059714" ></script>
+    <script type="text/javascript" src="https://static.yun.chinahrt.com/js/jquery.tipsy.js?1697723059714" ></script>
+    <script type="text/javascript" src="https://static.yun.chinahrt.com/js/layer/layer.js?1697723059714" ></script>
+    <script type="text/javascript" src="https://static.yun.chinahrt.com/js/My97DatePicker/WdatePicker.js?1697723059714" ></script>
+    <script type="text/javascript" src="https://static.yun.chinahrt.com/js/json2.js?1697723059714"></script><!--ie6兼容json--> 
+    <script type="text/javascript" src="https://static.yun.chinahrt.com/js/selectivizr.js?1697723059714"></script> <!-- ie6兼容css属性选择器 -->
+    <script type="text/javascript" src="https://static.yun.chinahrt.com/js/exportexcel.js?1697723059714"></script><!-- 导出excel的jquery插件 -->
+    <script type="text/javascript" src="https://static.yun.chinahrt.com/js/ztree3.5/js/jquery.ztree.core.js?1697723059714"></script>
+	<script type="text/javascript" src="https://static.yun.chinahrt.com/js/ztree3.5/js/jquery.ztree.excheck.js?1697723059714"></script>
+	<script type="text/javascript" src= "https://static.yun.chinahrt.com/js/jquery.autocomplete.js?1697723059714" ></script>
+    
+    <script type="text/javascript" src="https://static.yun.chinahrt.com/js/chinahrtjs/jquery.chinahrt.trainplan.js?1697723059714"></script>
+    <script type="text/javascript" src="https://static.yun.chinahrt.com/js/chinahrtjs/jquery.chinahrt.combo.js?1697723059714"></script>
+    <script type="text/javascript" src="https://static.yun.chinahrt.com/js/chinahrtjs/jquery.chinahrt.date.js?1697723059714"></script>
+    <script type="text/javascript" src="https://static.yun.chinahrt.com/js/chinahrtjs/jquery.chinahrt.orgctl.js?1697723059714"></script>
+    <script type="text/javascript" src="https://static.yun.chinahrt.com/js/chinahrtjs/jquery.chinahrt.platform.js?1697723059714"></script>
+    <script type="text/javascript" src="https://static.yun.chinahrt.com/js/chinahrtjs/jquery.chinahrt.coursename.js?1697723059714"></script>
+    <script>
+		 var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?b0155cd5ae135b5a8922f46a10fe14a0";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})(); 
+	</script>
+	<body>
+		<div class="cert-detail-box">
+			<h4>
+				
+					<b>宁夏专业技术人员继续教育在线培训平台</b>
+				
+				(证书查询)
+			</h4>
+			<div class="detail-slide clearfix">
+				<span>　用户名:</span>
+				<p>642222197303213823</p>
+			</div>
+			<div class="detail-slide clearfix">
+				<span>真实姓名:</span>
+				<p>高治芳</p>
+			</div>
+			<div class="detail-slide clearfix">
+				<span>身份证号:</span>
+				<p>642222197303213823</p>
+			</div>
+			<div class="detail-slide clearfix">
+				<span>所属组织:</span>
+				<p>海原县教育体育局</p>
+			</div>
+			<div class="detail-slide clearfix">
+				<span>工作单位:</span>
+				<p>海原一小</p>
+			</div>
+			<div class="detail-slide clearfix">
+				<span>培训计划:</span>
+				<p>2018年宁夏专业技术人员公需课培训计划</p>
+			</div>
+			<div class="detail-slide clearfix">
+				<span>培训结果:</span>
+				<p class="red">恭喜，您已通过该计划考核！</p>
+			</div>
+			<div class="detail-slide clearfix">
+				<span>获得学时:</span>
+				<p class="red">32.0</p>
+			</div>
+			<div class="detail-slide detail-special clearfix">
+				<span>获得必修学时:</span>
+				<p class="red">0.0</p>
+			</div>
+		</div>
+	</body>
+</html>
